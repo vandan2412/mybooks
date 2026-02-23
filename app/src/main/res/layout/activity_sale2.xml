@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FAFB"
+    android:padding="16dp"
+    tools:context=".sale2">
+
+    <!-- Scrollable content for optional fields -->
+    <ScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button_bar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <!-- Header Row -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="12dp">
+                <TextView
+                    android:text="Sales Entry"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#1E293B"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/btnDeleteSale"
+                    android:text="Delete Sale"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#DC2626"
+                    android:textSize="14sp"
+                    android:textAllCaps="false"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Date + Invoice -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:paddingVertical="8dp">
+                <EditText
+                    android:id="@+id/etDate"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="Date"
+                    android:inputType="none"
+                    android:padding="10dp"
+                    android:background="#FFFFFF"
+                    android:elevation="2dp"
+                    android:textColor="#000"
+                    android:layout_marginEnd="8dp" />
+                <EditText
+                    android:id="@+id/etInvoice"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="Invoice No."
+                    android:padding="10dp"
+                    android:background="#FFFFFF"
+                    android:elevation="2dp"
+                    android:textColor="#000"/>
+            </LinearLayout>
+
+            <!-- Party + Add Item -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+                <AutoCompleteTextView
+                    android:id="@+id/etParty"
+                    android:hint="Select or Search Party"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="#FFFFFF"
+                    android:elevation="2dp"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+                <Button
+                    android:id="@+id/btnAddItem"
+                    android:text="Add Item"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="#16A34A"
+                    android:textSize="14sp"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <!-- Fixed Height ListView Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:minHeight="300dp"
+                android:layout_marginBottom="8dp">
+
+                <ListView
+                    android:id="@+id/listViewItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:divider="#D1D5DB"
+                    android:dividerHeight="1dp"
+                    android:background="#FFFFFF"
+                    android:elevation="2dp"
+                    android:padding="8dp" />
+
+                <!-- Sub Total just above button bar -->
+                <TextView
+                    android:id="@+id/tvGrandTotal"
+                    android:text="Sub Total: ₹0.00"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#1E293B"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:padding="12dp"
+                    android:background="#E2E8F0" />
+            </LinearLayout>
+
+            <!-- Scrollable Optional Fields -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Discount -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <EditText
+                        android:id="@+id/etDiscountPercent"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="wrap_content"
+                        android:hint="Discount %"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#FFFFFF"
+                        android:elevation="2dp"
+                        android:textColor="#000"
+                        android:layout_marginEnd="8dp"/>
+                    <EditText
+                        android:id="@+id/etDiscount"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:layout_height="wrap_content"
+                        android:hint="Discount ₹"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#FFFFFF"
+                        android:elevation="2dp"
+                        android:textColor="#000"/>
+                </LinearLayout>
+
+                <!-- Tax -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+                    <EditText
+                        android:id="@+id/etTaxPercent"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="wrap_content"
+                        android:hint="Tax %"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#FFFFFF"
+                        android:elevation="2dp"
+                        android:textColor="#000"
+                        android:layout_marginEnd="8dp"/>
+                    <EditText
+                        android:id="@+id/etTax"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:layout_height="wrap_content"
+                        android:hint="Tax ₹"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#FFFFFF"
+                        android:elevation="2dp"
+                        android:textColor="#000"/>
+                </LinearLayout>
+
+                <!-- Final Total -->
+                <TextView
+                    android:id="@+id/tvFinalTotal"
+                    android:text="Final Total: ₹0.00"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#1E293B"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:padding="12dp"
+                    android:background="#FFD700"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Remarks -->
+                <EditText
+                    android:id="@+id/etRemarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Remarks (Optional)"
+                    android:inputType="textMultiLine"
+                    android:lines="2"
+                    android:maxLines="4"
+                    android:gravity="top"
+                    android:padding="10dp"
+                    android:background="#FFFFFF"
+                    android:elevation="2dp"
+                    android:textColor="#000"
+                    android:layout_marginBottom="16dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Fixed Bottom Button Bar -->
+    <LinearLayout
+        android:id="@+id/button_bar"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="8dp"
+        android:background="#F9FAFB">
+        <Button
+            android:id="@+id/btnPrev"
+            android:text="Prev"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6B7280"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:textSize="16sp"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/btnNext"
+            android:text="Next"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6B7280"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:textSize="16sp"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/btnCancel"
+            android:text="Cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#DC2626"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:textSize="16sp"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/btnSave"
+            android:text="Save"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2563EB"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

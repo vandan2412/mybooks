@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#FFFFFF"
+    android:elevation="5dp"
+    android:layout_margin="10dp"
+    android:clipToOutline="true">
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Sale Item"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#1E293B"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/etSearchItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search Item"
+        android:padding="10dp"
+        android:background="#F3F4F6"
+        android:textColor="#000"
+        android:textSize="15sp"
+        android:elevation="2dp"
+        android:imeOptions="actionNext"
+        android:inputType="text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="12dp"
+        android:weightSum="3">
+
+        <EditText
+            android:id="@+id/etQuantity"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Qty"
+            android:inputType="numberSigned|numberDecimal"
+            android:padding="10dp"
+            android:background="#F3F4F6"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:elevation="2dp"
+            android:imeOptions="actionNext"
+            android:layout_marginEnd="6dp" />
+
+        <Spinner
+            android:id="@+id/spinnerUnit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="#F3F4F6"
+            android:padding="8dp"
+            android:layout_marginEnd="6dp"
+            android:spinnerMode="dropdown" />
+
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Price"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            android:background="#F3F4F6"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:elevation="2dp"
+            android:imeOptions="actionDone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:paddingTop="12dp">
+        <Button
+            android:id="@+id/btnComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complete"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:backgroundTint="#2563EB"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="8dp"
+            android:elevation="3dp" />
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:backgroundTint="#16A34A"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="8dp"
+            android:elevation="3dp"
+            android:layout_marginStart="8dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

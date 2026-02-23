@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F6"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="20dp"
+        android:elevation="6dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginHorizontal="10dp"
+        android:clipToOutline="true"
+        android:backgroundTintMode="src_over"
+        android:layout_gravity="center"
+        android:showDividers="middle"
+        android:dividerPadding="8dp"
+        android:paddingBottom="24dp"
+        android:radius="20dp">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add / Edit Party"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:paddingBottom="12dp"
+            android:letterSpacing="0.05" />
+
+        <!-- Party Name & City -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/etPartyName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Party Name"
+                android:inputType="textPersonName"
+                android:layout_marginEnd="8dp"
+                android:padding="10dp"
+                android:backgroundTint="#9C27B0"
+                android:textColorHint="#888" />
+
+            <EditText
+                android:id="@+id/etCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="City"
+                android:inputType="text"
+                android:padding="10dp"
+                android:backgroundTint="#9C27B0"
+                android:textColorHint="#888" />
+        </LinearLayout>
+
+        <!-- Group & Opening Balance -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:weightSum="2">
+
+
+
+            <EditText
+                android:id="@+id/etOpening"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Opening Balance"
+                android:inputType="numberDecimal|numberSigned"
+                android:padding="10dp"
+                android:backgroundTint="#9C27B0"
+                android:textColorHint="#888" />
+            <Spinner
+                android:id="@+id/spinnerGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#9C27B0" />
+        </LinearLayout>
+
+        <!-- Phone & Alt Phone -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Phone No"
+                android:inputType="number"
+                android:maxLength="10"
+                android:layout_marginEnd="8dp"
+                android:padding="10dp"
+                android:backgroundTint="#9C27B0"
+                android:textColorHint="#888" />
+
+            <EditText
+                android:id="@+id/etAltPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Alt Phone No"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="10dp"
+                android:backgroundTint="#9C27B0"
+                android:textColorHint="#888" />
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:dividerPadding="8dp">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#9E9E9E"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:layout_marginEnd="12dp"
+                android:radius="10dp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#9C27B0"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="10dp"
+                android:radius="10dp"
+                android:elevation="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
